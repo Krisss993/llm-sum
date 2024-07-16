@@ -31,16 +31,16 @@ txt_input = st.text_area(
 
 result = []
 with st.form("summarize_form", clear_on_submit=True):
-    openai_api_key = st.text_input(
-        "OpenAI API Key",
+    groq_api_key = st.text_input(
+        "Groq API Key",
         type="password",
         disabled=not txt_input
     )
     submitted = st.form_submit_button("Submit")
-    if submitted and openai_api_key.startswith("sk-"):
+    if submitted and groq_api_key.startswith("sk-"):
         response = generate_response(txt_input)
         result.append(response)
-        del openai_api_key
+        del groq_api_key
 
 if len(result):
     st.info(response)
