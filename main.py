@@ -30,7 +30,7 @@ txt_input = st.text_area(
 )
 
 result = []
-with st.form("summarize_form", clear_on_submit=True):
+with st.form("summarize_form", clear_on_submit=False):
     groq_api_key = st.text_input(
         "Groq API Key",
         type="password",
