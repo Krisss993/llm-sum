@@ -37,7 +37,7 @@ with st.form("summarize_form", clear_on_submit=False):
         disabled=not txt_input
     )
     submitted = st.form_submit_button("Submit")
-    if submitted and groq_api_key.startswith("sk-"):
+    if submitted and groq_api_key.startswith("gsk-"):
         response = generate_response(txt_input)
         result.append(response)
         del groq_api_key
