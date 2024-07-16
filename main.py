@@ -1,13 +1,13 @@
 import streamlit as st
-from langchain_openai import OpenAI
+from langchain_groq import ChatGroq
 from langchain.docstore.document import Document
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains.summarize import load_summarize_chain
 
 def generate_response(txt):
-    llm = OpenAI(
+    llm = ChatGroq(
         temperature=0,
-        openai_api_key=openai_api_key
+        groq_api_key=groq_api_key
     )
     text_splitter = CharacterTextSplitter()
     texts = text_splitter.split_text(txt)
